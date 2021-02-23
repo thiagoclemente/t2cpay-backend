@@ -18,6 +18,10 @@ config :t2cpay, T2cpayWeb.Endpoint,
   pubsub_server: T2cpay.PubSub,
   live_view: [signing_salt: "15RaD5wQ"]
 
+config :t2cpay, T2cpay.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
